@@ -1,194 +1,193 @@
-📦 Listings App (React + TypeScript + Vite + Tailwind)
+# 🛍️ Frontend Product Listings App
 
-A clean product listing application built with React, TypeScript, Tailwind CSS, and Vite.
-Includes product listings, product details, rating UI, add-to-cart functionality, modals, loading skeletons, mock APIs, and review submission.
+A modern, responsive, and fully interactive **Product Listing & Details Application** built using **React + Vite**, styled with **Tailwind CSS**, and powered by **Mock Service Worker (MSW)** for API simulation.
 
-This project is part of an assignment and demonstrates clean architecture, component reusability, state management, mock API handling, and UI consistency.
+This application was developed as an interview assignment to demonstrate:
+- Clean UI/UX design
+- Component structuring
+- API simulation & state management
+- Reusability and modular architecture
 
-🚀 Tech Stack
+---
 
-React 18
+## 🚀 Live Demo  
+(Replace this with your deployed link after publishing)
 
-TypeScript
+👉 **https://yourappname.vercel.app**
 
-Vite
+---
 
-Tailwind CSS
+## 📸 Screenshots  
 
-Context API (Cart state)
-
-Mock Service Worker (MSW) – for fake API backend
-
-React Router DOM
-
-Modular folder structure
-
-🛠️ Installation & Setup
-1. Clone the repo
-git clone https://github.com/<your-name>/<your-repo>.git
-cd <your-repo>
-
-2. Install dependencies
-npm install
+> Add screenshots here after deployment  
+> Example:
 
 
+
+markdown
+Copy code
+
+---
+
+## ✨ Features
+
+### 🛒 Product List
+- Grid layout with responsive design  
+- Product images, price, category, rating, and stock badge  
+- Smooth hover animations  
+- Tailwind-powered modern UI  
+
+### 🔍 Search, Filters & Sorting  
+- Search by product name  
+- Filter by category  
+- Sort by price (low → high, high → low)  
+
+### ⭐ Ratings & Reviews  
+- Star rating UI  
+- Review modal popup  
+- Mocked user reviews per product  
+
+### 🧺 Cart System  
+- Add to cart  
+- Remove from cart  
+- Quantity handling  
+- Cart context with global state  
+
+### 🌓 Dark Mode  
+- Toggle between light & dark themes  
+- Saves theme preference automatically  
+
+### 🖼️ Product Details  
+- Full details view  
+- Large product image  
+- Description, rating, reviews  
+- Add to cart from details page  
+
+### 🧪 Mock API (MSW)  
+- Realistic mock API  
+- Endpoints:  
+  - `GET /api/products`  
+  - `GET /api/products/:id`  
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|-----------|----------|
+| **React** | UI Library |
+| **Vite** | Lightning-fast dev environment |
+| **TypeScript** | Type safety |
+| **Tailwind CSS** | Styling |
+| **MSW (Mock Service Worker)** | Mock API |
+| **React Router** | Routing |
+| **Context API** | Cart state |
+
+---
+
+## 📦 Installation & Setup
+
+### 1️⃣ Clone the repository
+
+```sh
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+2️⃣ Install dependencies
+sh
+Copy code
+yarn install
 or
 
-yarn
+sh
+Copy code
+npm install
+3️⃣ Start development server
+sh
+Copy code
+yarn dev
+or
 
-3. Start the development server
+sh
+Copy code
 npm run dev
+Project runs at:
 
+👉 http://localhost:5173
 
-Your app runs on:
+🌐 Deployment (Vercel Recommended)
+Push project to GitHub
 
-http://localhost:5173/
+Go to https://vercel.com
+
+Click New Project
+
+Import GitHub repo
+
+Set:
+
+Build Command: vite build
+
+Output Folder: dist
+
+Deploy
+
+Done 🎉
 
 📁 Folder Structure
+css
+Copy code
 src/
- ├── components/
- │    ├── Navbar.tsx
- │    ├── productcard.tsx
- │    ├── RatingStars.tsx
- │    ├── ReviewModal.tsx
- │    ├── Modal.tsx
- │    ├── SkeletonCard.tsx
- │    └── Toast.tsx
- │
- ├── context/
- │    └── CartContext.tsx
- │
- ├── features/
- │    └── products/
- │          ├── ProductList.tsx
- │          ├── ProductDetails.tsx
- │          └── useProducts.ts
- │
- ├── hooks/
- │    └── useReviews.ts
- │
- ├── mocks/
- │    ├── browser.ts
- │    ├── handlers.ts
- │    └── server.ts
- │
- ├── data/
- │    └── products.json
- │
- ├── App.tsx
- ├── main.tsx
- ├── index.css
- └── vite-env.d.ts
+ ├─ components/
+ ├─ context/
+ ├─ features/
+ │    └─ products/
+ ├─ hooks/
+ ├─ mocks/
+ │    ├─ handlers.ts
+ │    └─ server.ts
+ ├─ styles/
+ ├─ App.tsx
+ ├─ main.tsx
+🧑‍💻 Author
+Your Name
 
-🧪 Mock API Setup (MSW)
+GitHub: https://github.com/your-username
 
-This project uses Mock Service Worker to simulate product APIs.
+LinkedIn: https://www.linkedin.com/in/your-profile
 
-Available API routes
-Method	Route	Description
-GET	/api/products	Fetch all products
-GET	/api/products/:id	Fetch single product
-GET	/api/reviews/:id	Get reviews for product
-POST	/api/reviews/:id	Add a new review
-
-💡 MSW automatically starts in development mode.
-
-✨ Features
-✅ Product Listing
-
-Search
-
-Sort
-
-Filter
-
-Pagination
-
-Loading Skeletons
-
-✅ Product Details
-
-Full product info
-
-Ratings
-
-Reviews modal
-
-Add review
-
-Similar products
-
-✅ Cart Feature
-
-Add to cart
-
-Remove from cart
-
-Cart badge updates in Navbar
-
-Global state stored in Context API
-
-✅ UI
-
-Fully responsive
-
-Clean Tailwind styling
-
-Modal animations
-
-Toast notifications
-
-🌐 Deployment (Vercel or Netlify)
-Deploy to Vercel
-
-Go to: https://vercel.com/new
-
-Import GitHub repository
-
-Set Build Command:
-
-npm run build
-
-
-Set Output Directory:
-
-dist
-
-
-Click Deploy
-
-Deploy to Netlify
-npm run build
-
-
-Then drag the dist/ folder into:
-
-https://app.netlify.com/drop
-
-📸 Screenshots
-
-(Add your screenshots here if required)
-
-/public/screenshots/home.png
-/public/screenshots/details.png
-/public/screenshots/cart.png
-
-🤝 Contributing (Optional)
-
-This is an assignment project, but feel free to improve components, styling, or add features.
-
-📜 License
-
-MIT License.
-
-🏁 Final Notes
-
+⭐ Bonus Notes for Interviewers
 This project demonstrates:
 
-✔ Modular architecture
-✔ Component isolation
-✔ Reusable hooks
-✔ Clean UI logic
-✔ Mock API integration
-✔ Scalable folder structure
-✔ Industry-standard patterns
+Component reusability
+
+Data fetching with custom hooks
+
+Mock backend simulation
+
+Clean and scalable folder structure
+
+Fully functional cart system
+
+Strong frontend architecture
+
+🎉 Thank You!
+If you like the project, please ⭐ star the repository!
+
+yaml
+Copy code
+
+---
+
+# ✅ YES, YOU CAN CHANGE REPO TITLE AFTER CREATION  
+On GitHub:
+
+**Repo → Settings → Repository name → Edit → Save**
+
+No issues at all.  
+GitHub will auto-redirect old links.
+
+---
+
+# Want me to **generate screenshots, project description, commit messages**, or **deployment instructions step-by-step**?
+
+Just say **“generate screenshots for readme”** or **“deploy to vercel step by step”**.

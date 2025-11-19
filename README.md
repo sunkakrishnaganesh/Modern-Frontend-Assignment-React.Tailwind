@@ -1,104 +1,194 @@
-# React Coding Exercise — Listings Manager
+📦 Listings App (React + TypeScript + Vite + Tailwind)
 
-Thank you for your interest in joining the **iGnosis Tech Engineering Team**.  
-This repository contains a coding exercise used in our recruitment process for frontend engineering roles.
+A clean product listing application built with React, TypeScript, Tailwind CSS, and Vite.
+Includes product listings, product details, rating UI, add-to-cart functionality, modals, loading skeletons, mock APIs, and review submission.
 
-Please complete the exercise below, upload your code to a **personal GitHub repository**, and share the link with us.  
+This project is part of an assignment and demonstrates clean architecture, component reusability, state management, mock API handling, and UI consistency.
 
-⚠️ **Important:** Please **do not fork this repository**. Forks on GitHub are public and may expose your solution to other candidates.  
-Instead, download or clone the repo locally, then push your solution to a new repository in your own account.
+🚀 Tech Stack
 
----
+React 18
 
-## Prerequisites
+TypeScript
 
-- **Node.js v22.x** (repo ships with `.nvmrc`, run `nvm use`)  
-- **Yarn**
+Vite
 
----
+Tailwind CSS
 
-## Getting Started
+Context API (Cart state)
 
-~~~bash
-nvm use
-yarn install
-# one-time setup for MSW
-npx msw init public --save
-yarn dev
-~~~
+Mock Service Worker (MSW) – for fake API backend
 
-Open http://localhost:5173 in your browser.
+React Router DOM
 
-> Note: Navigating directly to `/products?...` in the address bar will return the SPA’s HTML.  
-> Use DevTools → Network → Fetch/XHR (or `fetch('/products')` in the console) to view the mocked JSON responses.
+Modular folder structure
 
----
+🛠️ Installation & Setup
+1. Clone the repo
+git clone https://github.com/<your-name>/<your-repo>.git
+cd <your-repo>
 
-## 📌 Coding Exercise
-
-You will build a small **Listings Manager** for products (think simple marketplace admin).  
-A minimal API is mocked using **MSW** so the app runs offline and tests are deterministic.
-
-The list and toolbar are intentionally unimplemented. Build the structure and styling you think is appropriate.
-
-When the starter runs, you’ll see placeholder notes on the Products and Details pages. Replace them as you implement the UI and data flow.
+2. Install dependencies
+npm install
 
 
-### Timebox
+or
 
-Please spend **no more than 3–4 hours** on this exercise.  
-Focus on the **core requirements first**. We are more interested in how you approach the problem than in feature completeness.  
+yarn
 
-Completing all core requirements is considered a strong submission.
+3. Start the development server
+npm run dev
 
----
 
-### 🎯 Core Requirements
+Your app runs on:
 
-- **Product List**
-  - Display a **paginated list** of products.
-  - Each product shows: name, price, category, and stock status.
-  - Sorting (by price, name, etc.)
-- **Product Details**
-  - Allow users to view details of a product on a separate route (or modal).
-- **Search & Filter**
-  - Provide search by product name.
-  - Allow filtering by category.
-- **States**
-  - Handle loading, empty, and error states gracefully.
-- **Accessibility**
-  - Implement search, filter, and pagination controls with accessible markup (labels, roles, keyboard navigation).
+http://localhost:5173/
 
-👉 The structure for the toolbar (search, filter, sort) is **intentionally not provided** — please design and implement this yourself (you may use component libraries).
+📁 Folder Structure
+src/
+ ├── components/
+ │    ├── Navbar.tsx
+ │    ├── productcard.tsx
+ │    ├── RatingStars.tsx
+ │    ├── ReviewModal.tsx
+ │    ├── Modal.tsx
+ │    ├── SkeletonCard.tsx
+ │    └── Toast.tsx
+ │
+ ├── context/
+ │    └── CartContext.tsx
+ │
+ ├── features/
+ │    └── products/
+ │          ├── ProductList.tsx
+ │          ├── ProductDetails.tsx
+ │          └── useProducts.ts
+ │
+ ├── hooks/
+ │    └── useReviews.ts
+ │
+ ├── mocks/
+ │    ├── browser.ts
+ │    ├── handlers.ts
+ │    └── server.ts
+ │
+ ├── data/
+ │    └── products.json
+ │
+ ├── App.tsx
+ ├── main.tsx
+ ├── index.css
+ └── vite-env.d.ts
 
----
+🧪 Mock API Setup (MSW)
 
-## 🔗 API (Mocked with MSW)
+This project uses Mock Service Worker to simulate product APIs.
 
-The mock server provides these endpoints:
+Available API routes
+Method	Route	Description
+GET	/api/products	Fetch all products
+GET	/api/products/:id	Fetch single product
+GET	/api/reviews/:id	Get reviews for product
+POST	/api/reviews/:id	Add a new review
 
-- `GET /products?query=&category=&page=1&limit=10`  
-- `GET /products/:id`  
+💡 MSW automatically starts in development mode.
 
-Seed data is in `src/mocks/data/products.json`.  
-You can adjust mock behavior in `src/mocks/handlers.ts`.
+✨ Features
+✅ Product Listing
 
----
+Search
 
-## ✅ What We Evaluate
+Sort
 
-- **Code quality & structure** — components, hooks, state management, TypeScript hygiene  
-- **UX & product thinking** — sensible defaults, empty/loading/error states, responsiveness, accessibility  
-- **UI skills** — how you design and implement the search/filter/sorting controls without a prebuilt scaffold  
-- **Testing** — provide at least a couple of meaningful tests that demonstrate your testing approach  
-- **Communication** — notes in your README about design decisions, trade-offs, and what you’d do with more time  
+Filter
 
----
+Pagination
 
-## 📤 Submission Instructions
+Loading Skeletons
 
-1. Complete the exercise.  
-2. Push your solution to a **personal GitHub repo** (do not fork this one).  
-3. Share the repository link through the Google Form (please check your email)
+✅ Product Details
 
----
+Full product info
+
+Ratings
+
+Reviews modal
+
+Add review
+
+Similar products
+
+✅ Cart Feature
+
+Add to cart
+
+Remove from cart
+
+Cart badge updates in Navbar
+
+Global state stored in Context API
+
+✅ UI
+
+Fully responsive
+
+Clean Tailwind styling
+
+Modal animations
+
+Toast notifications
+
+🌐 Deployment (Vercel or Netlify)
+Deploy to Vercel
+
+Go to: https://vercel.com/new
+
+Import GitHub repository
+
+Set Build Command:
+
+npm run build
+
+
+Set Output Directory:
+
+dist
+
+
+Click Deploy
+
+Deploy to Netlify
+npm run build
+
+
+Then drag the dist/ folder into:
+
+https://app.netlify.com/drop
+
+📸 Screenshots
+
+(Add your screenshots here if required)
+
+/public/screenshots/home.png
+/public/screenshots/details.png
+/public/screenshots/cart.png
+
+🤝 Contributing (Optional)
+
+This is an assignment project, but feel free to improve components, styling, or add features.
+
+📜 License
+
+MIT License.
+
+🏁 Final Notes
+
+This project demonstrates:
+
+✔ Modular architecture
+✔ Component isolation
+✔ Reusable hooks
+✔ Clean UI logic
+✔ Mock API integration
+✔ Scalable folder structure
+✔ Industry-standard patterns
